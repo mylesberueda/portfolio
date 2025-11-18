@@ -2,12 +2,48 @@ import type { WorkExperience } from '@/interfaces/work-experience';
 
 export const WORK_EXPERIENCE: WorkExperience[] = [
   {
+    company: 'Agile Defense',
+    position: 'Software Engineer',
+    location: 'REMOTE (Honolulu, HI)',
+    dates: {
+      start: new Date(2025, 3),
+      end: 'current',
+    },
+    description: [
+      'Moved to a new product team called Workforce - an webapp that orchestrates multi-agent workflows with a focus on UX and human-in-the-loop agentic interactions.',
+    ].join(' '),
+    entries: [
+      'Joined as a full-stack developer focusing on product development',
+      'Implemented multi-agent user flow, allowing users to produce high-quality output from one or more variables and questions',
+      'Participated in a big push toward stability and safely, debugging and fixing several bugs throughout the app',
+      'Implemented component, unit, and integration test suites as part of the safety push, focusing on machine behavior',
+    ],
+  },
+  {
+    company: 'Intellibridge',
+    position: 'Frontend Software Engineer',
+    location: 'REMOTE (Honolulu, HI)',
+    dates: {
+      start: new Date(2024, 11),
+      end: new Date(2025, 2),
+    },
+    description: [
+      "This was a short-term team, tasked with building a multifaceted forms solution for the US Gov't",
+      "The team's goal was to produce a high-quality, highly covered, full-stack app with a complex form that's easily reusable and configurable, even by non-technical team members.",
+    ].join(' '),
+    entries: [
+      'Developed with a strong preference for TDD, implementing features via red-green-refactor loop',
+      'Designed and implemented an extensible form control solution allowing for complex output from simple configurations',
+      'During final presentation, live coded the solution for several stakeholders on a change order, demonstrating the ease of our solution',
+    ],
+  },
+  {
     company: 'Intellibridge',
     position: 'Software Engineer III',
     location: 'REMOTE (Honolulu, HI)',
     dates: {
       start: new Date(2022, 7),
-      end: 'current',
+      end: new Date(2024, 11),
     },
     description: [
       'I joined Intellibridge on the R&D team, where I was responsible for implementing features on a new product called Aolytix - an infrastructure visualization tool.',
@@ -24,7 +60,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
   },
   {
     company: 'Govalo',
-    location: 'REMOTE (Redlands, CA)',
+    location: 'REMOTE (Honolulu, HI)',
     position: 'Junior Software Engineer',
     dates: {
       start: new Date(2021, 8),
