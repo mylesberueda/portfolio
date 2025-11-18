@@ -2,6 +2,13 @@ import type { Project } from '@/interfaces/project';
 
 export const PROJECTS: Project[] = [
   {
+    title: 'burneural-network',
+    description: {
+      short: 'A simple implementation of a neural network in Rust using Burn',
+    },
+    github: 'https://github.com/mylesberueda/burneural-network',
+  },
+  {
     title: 'rust-cli-starter',
     description: {
       short: 'My go-to starter CLI project',
@@ -39,12 +46,5 @@ export const PROJECTS: Project[] = [
     },
     github: 'https://github.com/MylesWritesCode/portfolio',
     imgs: ['/assets/projects/portfolio-old/main.png', '/assets/projects/portfolio-old/achievements.png'],
-  },
-  {
-    title: 'TODO',
-    description: {
-      short:
-        "It looks like a bunch of my old projects no longer work, and I don't want to just pull them from my last portfolio, so I'm going to have to build this out again.",
-    },
   },
 ];
