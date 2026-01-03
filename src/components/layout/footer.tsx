@@ -3,6 +3,7 @@ import { IoLogoGithub, IoLogoLinkedin, IoMailOutline } from 'react-icons/io5';
 import { SiMastodon } from 'react-icons/si';
 
 import type { Post } from '@/interfaces/post';
+import { AUTHOR_FULL_NAME } from '@/lib/author';
 import { LINKS } from '@/lib/links';
 import { PostPreview } from '@/app/_components/posts/post-preview';
 
@@ -56,7 +57,7 @@ const Footer = ({ post: _ }: FooterProps) => {
       <footer className='flex justify-center border-t bg-base-200 px-10 py-4 text-base-content'>
         <div className='footer max-w-7xl'>
           <aside className='grid-flow-col items-center'>
-            <p>&copy; {new Date().getFullYear()} Myles Berueda. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} {AUTHOR_FULL_NAME}. All rights reserved.</p>
           </aside>
           <nav className='md:place-self-center md:justify-self-end'>
             <div className='grid grid-flow-col gap-4'>
