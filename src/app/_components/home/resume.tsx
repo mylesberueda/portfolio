@@ -1,7 +1,8 @@
 import NextLink from 'next/link';
 import { useMemo } from 'react';
 
-import { EDUCATION, SKILLS, WORK_EXPERIENCE } from '@/lib/resume';
+import { EDUCATION, WORK_EXPERIENCE } from '@/lib/resume';
+import { SKILLS } from './skills';
 
 import { ResumeEducation, ResumeSkill, ResumeWorkExperience } from './_components';
 import Section from './section';

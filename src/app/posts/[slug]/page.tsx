@@ -6,6 +6,7 @@ import { PostHeader } from '@/app/_components/posts/post-header';
 import Alert from '@/components/alert';
 import Container from '@/components/container';
 import { getAllPosts, getPostBySlug } from '@/lib/api';
+import { AUTHOR_FULL_NAME } from '@/lib/author';
 import markdownToHtml from '@/lib/markdownToHtml';
 
 export default async function Post({ params }: Params) {
@@ -49,7 +50,7 @@ export function generateMetadata({ params }: Params): Metadata {
     return notFound();
   }
 
-  const title = `${post.title} | Myles Berueda`;
+  const title = `${post.title} | ${AUTHOR_FULL_NAME}`;
 
   return {
     title,
