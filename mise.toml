@@ -1,2 +1,39 @@
 [tools]
 node = "latest"
+typst = "latest"
+
+# Hey buddy. Eyes glaze over the package.json again and you're looking for the 
+# fast way to generate a resume, right? This one.
+# Quicktip: `mise run gen:resume 5` 👈 what worked best last run.
+[tasks."gen:resume"]
+description = "Generate resume with optional experience limit"
+usage = 'arg "[experience]" help="Number of experience entries to include"'
+run = [
+  "pnpm gen:resume:data {{#if usage.experience}}--experience {{usage.experience}}{{/if}}",
+  "pnpm gen:resume",
+]
+
+# If you need a cover letter 👇. You'll still need to edit the content per 
+# company/letter, then you can run the next task.
+[tasks."gen:cover-letter"]
+description = "Generate cover letter for a company"
+usage = 'arg "<company>" help="Company name for cover letter"'
+run = "pnpm gen:cover-letter '{{usage.company}}'"
+
+# Right here. This one. Edit the .typ and company json files first.
+[tasks."gen:cover-letter:recompile"]
+description = "Recompile cover letters (optionally filter by company)"
+usage = 'arg "[company]" help="Company name to filter by"'
+run = "pnpm gen:cover-letter:recompile '{{usage.company}}'"
+
+[tasks.gen]
+description = "Generate resume and optionally cover letters"
+usage = '''
+arg "[experience]" help="Number of experience entries to include"
+arg "[company]" help="Company name for cover letter (optional)"
+'''
+run = [
+  "pnpm gen:resume:data {{#if usage.experience}}--experience {{usage.experience}}{{/if}}",
+  "pnpm gen:resume",
+  "{{#if usage.company}}pnpm gen:cover-letter '{{usage.company}}'{{/if}}",
+]

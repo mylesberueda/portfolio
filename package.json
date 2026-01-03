@@ -3,7 +3,12 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "gen:resume:data": "node --experimental-strip-types scripts/gen-resume-data.ts",
+    "gen:resume": "node --experimental-strip-types scripts/gen-resume.ts",
+    "gen:resume:full": "pnpm gen:resume:data && pnpm gen:resume",
+    "gen:cover-letter": "node --experimental-strip-types scripts/gen-cover-letter.ts",
+    "gen:cover-letter:recompile": "node --experimental-strip-types scripts/recompile-cover-letter.ts"
   },
   "dependencies": {
     "classnames": "^2.5.1",

@@ -5,17 +5,24 @@ import { IoGitMerge, IoLogoDocker, IoLogoJavascript, IoLogoPython, IoLogoReact }
 import { SiPostgresql, SiRust, SiTypescript } from 'react-icons/si';
 import { TbBrandCSharp } from 'react-icons/tb';
 
-export const SKILLS: Skill[] = [
-  { icon: <IoLogoJavascript size={24} />, type: 'tech', name: 'JavaScript', experience: 'expert' },
-  { icon: <SiTypescript size={24} />, type: 'tech', name: 'TypeScript', experience: 'expert' },
-  { icon: <IoLogoReact size={24} />, type: 'tech', name: 'React', experience: 'expert' },
-  { icon: <SiRust size={24} />, type: 'tech', name: 'Rust', experience: 'high' },
-  { icon: <FaGolang size={24} />, type: 'tech', name: 'Go', experience: 'high' },
-  { icon: <IoGitMerge size={24} />, type: 'tech', name: 'Git', experience: 'high' },
-  { icon: <IoLogoDocker size={24} />, type: 'tech', name: 'Docker', experience: 'high' },
-  { icon: <SiPostgresql size={24} />, type: 'tech', name: 'SQL', experience: 'medium' },
-  { icon: <FaAws size={24} />, type: 'tech', name: 'AWS', experience: 'medium' },
-  { icon: <AiOutlineKubernetes size={24} />, type: 'tech', name: 'Kubernetes', experience: 'medium' },
-  { icon: <IoLogoPython size={24} />, type: 'tech', name: 'Python', experience: 'medium' },
-  { icon: <TbBrandCSharp size={24} />, type: 'tech', name: 'C#', experience: 'medium' },
-];
+import { SKILLS as SKILLS_DATA } from './skills';
+
+const SKILL_ICONS: Record<string, React.ReactNode> = {
+  JavaScript: <IoLogoJavascript size={24} />,
+  TypeScript: <SiTypescript size={24} />,
+  React: <IoLogoReact size={24} />,
+  Rust: <SiRust size={24} />,
+  Go: <FaGolang size={24} />,
+  Git: <IoGitMerge size={24} />,
+  Docker: <IoLogoDocker size={24} />,
+  SQL: <SiPostgresql size={24} />,
+  AWS: <FaAws size={24} />,
+  Kubernetes: <AiOutlineKubernetes size={24} />,
+  Python: <IoLogoPython size={24} />,
+  'C#': <TbBrandCSharp size={24} />,
+};
+
+export const SKILLS: Skill[] = SKILLS_DATA.map((skill) => ({
+  ...skill,
+  icon: SKILL_ICONS[skill.name] ?? null,
+}));
