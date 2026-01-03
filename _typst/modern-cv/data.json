@@ -1,0 +1,178 @@
+{
+  "author": {
+    "firstname": "Myles",
+    "lastname": "Berueda",
+    "position": [
+      "Software Engineer"
+    ],
+    "website": "https://themapletree.io",
+    "about": "Full-stack engineer with experience building web applications, infrastructure tooling, and developer experiences. Passionate about performance optimization, clean code, and shipping products that make a difference.",
+    "email": "me@themapletree.io",
+    "github": "mylesberueda",
+    "linkedin": "myles-berueda",
+    "mastodon": "@mylesberueda"
+  },
+  "experience": [
+    {
+      "company": "Agile Defense",
+      "position": "Software Engineer",
+      "location": "REMOTE (Honolulu, HI)",
+      "startDate": "Apr 2025",
+      "endDate": "Present",
+      "description": "Moved to a new product team called Workforce - an webapp that orchestrates multi-agent workflows with a focus on UX and human-in-the-loop agentic interactions.",
+      "entries": [
+        "Joined as a full-stack developer focusing on product development",
+        "Implemented multi-agent user flow, allowing users to produce high-quality output from one or more variables and questions",
+        "Participated in a big push toward stability and safely, debugging and fixing several bugs throughout the app",
+        "Implemented component, unit, and integration test suites as part of the safety push, focusing on machine behavior"
+      ]
+    },
+    {
+      "company": "Intellibridge",
+      "position": "Frontend Software Engineer",
+      "location": "REMOTE (Honolulu, HI)",
+      "startDate": "Dec 2024",
+      "endDate": "Mar 2025",
+      "description": "This was a short-term team, tasked with building a multifaceted forms solution for the US Gov't The team's goal was to produce a high-quality, highly covered, full-stack app with a complex form that's easily reusable and configurable, even by non-technical team members.",
+      "entries": [
+        "Developed with a strong preference for TDD, implementing features via red-green-refactor loop",
+        "Designed and implemented an extensible form control solution allowing for complex output from simple configurations",
+        "During final presentation, live coded the solution for several stakeholders on a change order, demonstrating the ease of our solution"
+      ]
+    },
+    {
+      "company": "Intellibridge",
+      "position": "Software Engineer III",
+      "location": "REMOTE (Honolulu, HI)",
+      "startDate": "Aug 2022",
+      "endDate": "Dec 2024",
+      "description": "I joined Intellibridge on the R&D team, where I was responsible for implementing features on a new product called Aolytix - an infrastructure visualization tool. My responsibilities included mentoring other devs - especially in the context of frontend development, and interfacing with users to gather feedback.",
+      "entries": [
+        "Led initiative for performance-based enhancements, tasked with finding and optimizing data stream bottlenecks on the frontend",
+        "Increased performance of our canvas graph library, increasing throughput by ~70%",
+        "Decreased first-paint time by ~80% by optimizing graph transforms, reducing first-paint from over 150ms to under 30ms",
+        "Led transition from commercial graphing library to Cytoscape, and open-source alternative",
+        "Drove desktop deployment of Aolytix, aimed at reducing friction for users with the goal of increasing the userbase",
+        "Led auth implementation, interfacing with third-party clerk solutions, keeping in sync with the first release timeline"
+      ]
+    },
+    {
+      "company": "Govalo",
+      "position": "Junior Software Engineer",
+      "location": "REMOTE (Honolulu, HI)",
+      "startDate": "Sep 2021",
+      "endDate": "Aug 2022",
+      "description": "Govalo is a startup that specializes in creating a platform for gift giving on Shopify. I joined as a junior software engineer, responsible for interfacing with clients and developing new features.",
+      "entries": [
+        "Implemented the Shopify plugin, using Svelte and TypeScript",
+        "Interfaced with owners of Shopify stores, often adding custom implementations to their stores",
+        "Debugged and fixed issues with the plugin, often requiring quick turnarounds to keep stores online",
+        "Guided developers on implementation tips and tricks, regarding both the plugin and the Shopify API"
+      ]
+    },
+    {
+      "company": "Residential Choices",
+      "position": "Software Engineer",
+      "location": "Honolulu, HI",
+      "startDate": "Sep 2019",
+      "endDate": "Sep 2021",
+      "description": "Once I graduated from SNHU, I started working on building a simple webapp in my free time to target some inefficiency I observed in the office. The app quickly gained traction and was adopted by the company. It ran on an Express API connected to a Postgres DB with a React frontend, and was deployed to an on-prem server.",
+      "entries": [
+        "Converted Excel-based workflow to a webapp, which allowed for better UI/UX and custom data validation",
+        "Prototyped out full-stack app in about a month, targeting ~20 users",
+        "Increased metric visibility by adding a custom dashboard displaying key deadline-related metrics",
+        "Expanded the application by further learning and implementing d3 for custom reports",
+        "Implemented alerting and notification features, resulting in an increase in the company's collection rate"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "school": "Southern New Hampshire University",
+      "degree": "Bachelor of Science in Computer Science",
+      "gpa": "4.0",
+      "startDate": "Aug 2016",
+      "endDate": "Aug 2019",
+      "description": "The computer science program with a concentration in software engineering provided a great base for where I am today. In addition to learning the fundamentals of computer science, I focused on several electives on data analytics and statistics.",
+      "entries": [
+        "DSA project: MovieDB sorting with Python",
+        "3D project: 3D rendering with OpenGL",
+        "Capstone project: Web-app visualizing public flight data (incoming, outgoing) on airline flights"
+      ]
+    },
+    {
+      "school": "Honolulu Community College",
+      "degree": "AWS Cloud Foundations",
+      "startDate": "Sep 2024",
+      "endDate": "Oct 2024",
+      "description": "By the time I took this class, I had been working on Aolytix, an app that focuses on visualizing an AWS infrastructure, for 2 years. This class provided a structured, fundamental education on the basics of AWS, including how to manage your account and navigate the various services offered. The outcome of the class is a certification in AWS Cloud Foundations.",
+      "entries": [
+        "Worked through labs on EC2, S3, RDS, and more",
+        "Deployed a simple web app on an EC2 instance, routed through Route 53",
+        "Completed several knowledge checks on various AWS services"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "JavaScript",
+      "type": "tech",
+      "experience": "expert"
+    },
+    {
+      "name": "TypeScript",
+      "type": "tech",
+      "experience": "expert"
+    },
+    {
+      "name": "React",
+      "type": "tech",
+      "experience": "expert"
+    },
+    {
+      "name": "Rust",
+      "type": "tech",
+      "experience": "high"
+    },
+    {
+      "name": "Go",
+      "type": "tech",
+      "experience": "high"
+    },
+    {
+      "name": "Git",
+      "type": "tech",
+      "experience": "high"
+    },
+    {
+      "name": "Docker",
+      "type": "tech",
+      "experience": "high"
+    },
+    {
+      "name": "SQL",
+      "type": "tech",
+      "experience": "medium"
+    },
+    {
+      "name": "AWS",
+      "type": "tech",
+      "experience": "medium"
+    },
+    {
+      "name": "Kubernetes",
+      "type": "tech",
+      "experience": "medium"
+    },
+    {
+      "name": "Python",
+      "type": "tech",
+      "experience": "medium"
+    },
+    {
+      "name": "C#",
+      "type": "tech",
+      "experience": "medium"
+    }
+  ]
+}

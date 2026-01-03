@@ -15,7 +15,7 @@
     address: if "address" in data.author { data.author.address } else { none },
     positions: data.author.position,
   ),
-  profile-picture: none,
+  profile-picture: image("/public/myles-berueda.png"),
   language: "en",
   font: "Source Sans 3",
   show-footer: false,
@@ -31,16 +31,19 @@
   ),
 )
 
-#letter-heading(job-position: "Software Engineer", addressee: "Hiring Manager")
+#letter-heading(job-position: if "role" in company { company.role } else { "Software Engineer" }, addressee: "Hiring Manager")
 
+= About Me
 #coverletter-content[
-  #lorem(100)
+  #lorem(80)
 ]
 
+= Why #company.name?
 #coverletter-content[
   #lorem(90)
 ]
 
+= Why Me?
 #coverletter-content[
-  #lorem(110)
+  #lorem(100)
 ]

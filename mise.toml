@@ -9,7 +9,7 @@ typst = "latest"
 description = "Generate resume with optional experience limit"
 usage = 'arg "[experience]" help="Number of experience entries to include"'
 run = [
-  "pnpm gen:resume:data {{#if usage.experience}}--experience {{usage.experience}}{{/if}}",
+  "pnpm gen:resume:data {% if usage.experience %}--experience {{ usage.experience }} {% endif %}",
   "pnpm gen:resume",
 ]
 
@@ -18,13 +18,13 @@ run = [
 [tasks."gen:cover-letter"]
 description = "Generate cover letter for a company"
 usage = 'arg "<company>" help="Company name for cover letter"'
-run = "pnpm gen:cover-letter '{{usage.company}}'"
+run = "pnpm gen:cover-letter '{{ usage.company }}'"
 
 # Right here. This one. Edit the .typ and company json files first.
 [tasks."gen:cover-letter:recompile"]
 description = "Recompile cover letters (optionally filter by company)"
 usage = 'arg "[company]" help="Company name to filter by"'
-run = "pnpm gen:cover-letter:recompile '{{usage.company}}'"
+run = "pnpm gen:cover-letter:recompile '{{ usage.company }}'"
 
 [tasks.gen]
 description = "Generate resume and optionally cover letters"
@@ -33,7 +33,7 @@ arg "[experience]" help="Number of experience entries to include"
 arg "[company]" help="Company name for cover letter (optional)"
 '''
 run = [
-  "pnpm gen:resume:data {{#if usage.experience}}--experience {{usage.experience}}{{/if}}",
+  "pnpm gen:resume:data {% if usage.experience %}--experience {{ usage.experience }} {% endif %}",
   "pnpm gen:resume",
-  "{{#if usage.company}}pnpm gen:cover-letter '{{usage.company}}'{{/if}}",
+  "{% if usage.company %}pnpm gen:cover-letter '{{ usage.company }}'{% endif %}",
 ]
