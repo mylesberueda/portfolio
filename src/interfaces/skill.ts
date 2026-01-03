@@ -1,19 +1,8 @@
-export type TechSkillRating = 'low' | 'medium' | 'high' | 'expert';
-export type SoftSkillRating = 'low' | 'medium' | 'high';
-
-interface BaseTechSkillData {
+export interface SkillData {
   name: string;
-  type: 'tech';
-  experience: TechSkillRating;
+  experience: 'low' | 'medium' | 'high' | 'expert';
+  type: 'tech' | 'soft';
 }
-
-interface BaseSoftSkillData {
-  name: string;
-  type: 'soft';
-  experience: SoftSkillRating;
-}
-
-export type SkillData = BaseTechSkillData | BaseSoftSkillData;
 
 export interface Skill extends SkillData {
   icon: React.ReactNode;

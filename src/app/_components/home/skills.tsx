@@ -5,7 +5,7 @@ import { IoGitMerge, IoLogoDocker, IoLogoJavascript, IoLogoPython, IoLogoReact }
 import { SiPostgresql, SiRust, SiTypescript } from 'react-icons/si';
 import { TbBrandCSharp } from 'react-icons/tb';
 
-import { SKILLS as SKILLS_DATA } from './skills';
+import { SKILLS as SKILLS_DATA } from '@/lib/resume/skills';
 
 const SKILL_ICONS: Record<string, React.ReactNode> = {
   JavaScript: <IoLogoJavascript size={24} />,
