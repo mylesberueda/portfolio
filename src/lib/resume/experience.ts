@@ -38,9 +38,9 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     ],
   },
   {
-    company: 'Intellibridge',
+    company: 'Revacomm',
     position: 'Software Engineer III',
-    location: 'REMOTE (Honolulu, HI)',
+    location: 'Honolulu, HI',
     dates: {
       start: new Date(2022, 7),
       end: new Date(2024, 11),
