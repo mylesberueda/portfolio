@@ -4,7 +4,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
   {
     company: 'Agile Defense',
     position: 'Software Engineer',
-    location: 'REMOTE (Honolulu, HI)',
+    location: 'McLean, VA',
     dates: {
       start: new Date(2025, 3),
       end: 'current',
@@ -16,13 +16,13 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
       'Joined as a full-stack developer focusing on product development',
       'Implemented multi-agent user flow, allowing users to produce high-quality output from one or more variables and questions',
       'Participated in a big push toward stability and safely, debugging and fixing several bugs throughout the app',
-      'Implemented component, unit, and integration test suites as part of the safety push, focusing on machine behavior',
+      'Implemented component, unit, and integration test suites as part of the safety push, focusing on behavior',
     ],
   },
   {
-    company: 'Intellibridge',
+    company: 'Intellibridge, an Agile Defense Company',
     position: 'Frontend Software Engineer',
-    location: 'REMOTE (Honolulu, HI)',
+    location: 'McLean, VA',
     dates: {
       start: new Date(2024, 11),
       end: new Date(2025, 2),
@@ -60,7 +60,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
   },
   {
     company: 'Govalo',
-    location: 'REMOTE (Honolulu, HI)',
+    location: 'Redlands, CA',
     position: 'Junior Software Engineer',
     dates: {
       start: new Date(2021, 8),
