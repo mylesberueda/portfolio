@@ -49,10 +49,21 @@ function buildAuthorData() {
 function buildExperienceData(limit?: number) {
   const experiences = limit ? WORK_EXPERIENCE.slice(0, limit) : WORK_EXPERIENCE;
 
+  const formatLocation = (location: string | undefined) => {
+    if (location?.toLocaleLowerCase().startsWith('remote')) {
+      const actual = location?.match(/\((.*)\)/)?.at(1);
+      if (!actual) return location;
+
+      return `from ${actual}`;
+    }
+
+    return location;
+  };
+
   return experiences.map((exp) => ({
     company: exp.company,
     position: exp.position,
-    location: exp.location,
+    location: formatLocation(exp.location),
     startDate: formatDate(exp.dates.start),
     endDate: formatDate(exp.dates.end),
     description: exp.description,

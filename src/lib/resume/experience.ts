@@ -4,7 +4,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
   {
     company: 'Agile Defense',
     position: 'Software Engineer',
-    location: 'REMOTE (Honolulu, HI)',
+    location: 'McLean, VA',
     dates: {
       start: new Date(2025, 3),
       end: 'current',
@@ -20,9 +20,9 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     ],
   },
   {
-    company: 'Intellibridge',
+    company: 'Intellibridge, an Agile Defense Company',
     position: 'Frontend Software Engineer',
-    location: 'REMOTE (Honolulu, HI)',
+    location: 'McLean, VA',
     dates: {
       start: new Date(2024, 11),
       end: new Date(2025, 2),
@@ -38,9 +38,9 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     ],
   },
   {
-    company: 'Intellibridge',
+    company: 'Revacomm',
     position: 'Software Engineer III',
-    location: 'REMOTE (Honolulu, HI)',
+    location: 'Honolulu, HI',
     dates: {
       start: new Date(2022, 7),
       end: new Date(2024, 11),
@@ -60,7 +60,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
   },
   {
     company: 'Govalo',
-    location: 'REMOTE (Honolulu, HI)',
+    location: 'Redlands, CA',
     position: 'Junior Software Engineer',
     dates: {
       start: new Date(2021, 8),
