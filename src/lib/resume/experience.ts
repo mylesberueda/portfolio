@@ -16,7 +16,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
       'Joined as a full-stack developer focusing on product development',
       'Implemented multi-agent user flow, allowing users to produce high-quality output from one or more variables and questions',
       'Participated in a big push toward stability and safely, debugging and fixing several bugs throughout the app',
-      'Implemented component, unit, and integration test suites as part of the safety push, focusing on machine behavior',
+      'Implemented component, unit, and integration test suites as part of the safety push, focusing on behavior',
     ],
   },
   {

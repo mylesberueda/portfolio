@@ -85,7 +85,7 @@ async function main() {
 
     try {
       const fontPath = join(process.cwd(), TYPST_DIR, '_fonts');
-      execSync(`typst compile --font-path "${fontPath}" "${resumeTypPath}" "${pdfPath}"`, { stdio: 'inherit' });
+      execSync(`typst compile --pdf-standard ua-1 --font-path "${fontPath}" "${resumeTypPath}" "${pdfPath}"`, { stdio: 'inherit' });
 
       // Copy resume.typ reference
       await copyFile(resumeTypPath, typOutputPath);
