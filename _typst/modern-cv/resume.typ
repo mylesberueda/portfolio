@@ -1,6 +1,9 @@
 #import "@preview/modern-cv:0.9.0": *
 
 #let data = json("data.json")
+#let full-name = data.author.firstname + " " + data.author.lastname
+#let doc-title = "Resume for " + full-name
+#let doc-keywords = ("software engineer", "resume", "CV", ..data.skills.map(s => s.name))
 
 #show: resume.with(
   author: (
@@ -55,3 +58,6 @@
 
 #let skill-names = data.skills.map(s => s.name)
 #resume-skill-item("Technologies", skill-names)
+
+// Override document metadata (must come after resume.with to override package defaults)
+#set document(title: doc-title, description: doc-title, keywords: doc-keywords)

@@ -42,7 +42,7 @@ async function main() {
       const pdfPath = typPath.replace(/\.typ$/, '.pdf');
 
       try {
-        execSync(`typst compile --root "${rootPath}" --font-path "${fontPath}" "${typPath}" "${pdfPath}"`, {
+        execSync(`typst compile --pdf-standard ua-1 --root "${rootPath}" --font-path "${fontPath}" "${typPath}" "${pdfPath}"`, {
           stdio: 'inherit',
         });
         console.log(`Recompiled: ${pdfPath}`);

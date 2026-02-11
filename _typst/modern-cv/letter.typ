@@ -2,6 +2,9 @@
 
 #let data = json("data.json")
 #let company = json("company.json")
+#let full-name = data.author.firstname + " " + data.author.lastname
+#let doc-title = "Cover Letter for " + full-name + " - " + company.name
+#let doc-keywords = ("cover letter", "software engineer", company.name)
 
 #show: coverletter.with(
   author: (
@@ -44,3 +47,6 @@
 #coverletter-content[
   #lorem(110)
 ]
+
+// Override document metadata (must come after coverletter.with to override package defaults)
+#set document(title: doc-title, description: doc-title, keywords: doc-keywords)
