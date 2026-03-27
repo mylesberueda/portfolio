@@ -13,10 +13,10 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
       'Moved to a new product team called Workforce - an webapp that orchestrates multi-agent workflows with a focus on UX and human-in-the-loop agentic interactions.',
     ].join(' '),
     entries: [
-      'Joined as a full-stack developer focusing on product development',
-      'Implemented multi-agent user flow, allowing users to produce high-quality output from one or more variables and questions',
-      'Participated in a big push toward stability and safely, debugging and fixing several bugs throughout the app',
-      'Implemented component, unit, and integration test suites as part of the safety push, focusing on behavior',
+      'Built UI flows for user-defined, DAG-style multi-agent workflows, letting users chain specialized agents with templated handoffs, tools, and model settings',
+      'Owned scheduled workflow execution end to end, using BullMQ on the backend and a timezone-aware scheduling UI that stores recurring runs in UTC',
+      'Reworked layout, routing, and data-fetching patterns to eliminate full-page refreshes, improve caching, and make the app feel noticeably faster to users',
+      'Started and drove mobile and tablet usability improvements after identifying demo risk, making the app workable on smaller screens for client-facing use',
     ],
   },
   {
@@ -32,9 +32,9 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
       "The team's goal was to produce a high-quality, highly covered, full-stack app with a complex form that's easily reusable and configurable, even by non-technical team members.",
     ].join(' '),
     entries: [
-      'Developed with a strong preference for TDD, implementing features via red-green-refactor loop',
-      'Designed and implemented an extensible form control solution allowing for complex output from simple configurations',
-      'During final presentation, live coded the solution for several stakeholders on a change order, demonstrating the ease of our solution',
+      'Built full-stack features in a TDD workflow, using red-green-refactor to keep coverage high on a short-lived government forms project',
+      'Designed and implemented extensible form controls that generated complex behavior from simple configurations, making the system easier to reuse and adapt',
+      'Live-coded a stakeholder-requested change during the final presentation, demonstrating how quickly new form behavior could be added without reworking the app',
     ],
   },
   {
@@ -50,12 +50,11 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
       'My responsibilities included mentoring other devs - especially in the context of frontend development, and interfacing with users to gather feedback.',
     ].join(' '),
     entries: [
-      'Led initiative for performance-based enhancements, tasked with finding and optimizing data stream bottlenecks on the frontend',
-      'Increased performance of our canvas graph library, increasing throughput by ~70%',
-      'Decreased first-paint time by ~80% by optimizing graph transforms, reducing first-paint from over 150ms to under 30ms',
-      'Led transition from commercial graphing library to Cytoscape, and open-source alternative',
-      'Drove desktop deployment of Aolytix, aimed at reducing friction for users with the goal of increasing the userbase',
-      'Led auth implementation, interfacing with third-party clerk solutions, keeping in sync with the first release timeline',
+      'Led frontend performance work across Aolytix, identifying data-stream bottlenecks and increasing canvas graph throughput by about 70% on large infrastructure views',
+      'Cut first-paint time by about 80% by optimizing graph transforms, reducing initial render from over 150ms to under 30ms as graph sizes approached 1k+ nodes',
+      'Led the migration from a commercial graphing library to Cytoscape, giving the team a more extensible open-source foundation for graph-heavy features',
+      'Built a Tauri desktop deployment that paired a React client with a Go backend through Rust, giving teams an alternative to inconsistent browser environments',
+      'Led authentication implementation and coordinated with third-party providers to keep auth delivery aligned with the first release timeline',
     ],
   },
   {
@@ -71,10 +70,10 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
       'I joined as a junior software engineer, responsible for interfacing with clients and developing new features.',
     ].join(' '),
     entries: [
-      'Implemented the Shopify plugin, using Svelte and TypeScript',
-      'Interfaced with owners of Shopify stores, often adding custom implementations to their stores',
-      'Debugged and fixed issues with the plugin, often requiring quick turnarounds to keep stores online',
-      'Guided developers on implementation tips and tricks, regarding both the plugin and the Shopify API',
+      'Reworked a fragile 5k-line JavaScript Shopify storefront plugin into a modular Svelte-based implementation with better Shopify integration, faster load behavior, and less breakage on theme updates',
+      'Worked directly with Shopify store owners to deliver custom implementations tailored to their storefronts',
+      'Debugged and fixed production issues in merchant storefronts, often under quick turnaround expectations when plugin behavior broke during Shopify or theme updates',
+      'Helped other developers navigate Shopify API and plugin implementation details as the team expanded feature work',
     ],
   },
   {
@@ -91,11 +90,10 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
       'It ran on an Express API connected to a Postgres DB with a React frontend, and was deployed to an on-prem server.',
     ].join(' '),
     entries: [
-      'Converted Excel-based workflow to a webapp, which allowed for better UI/UX and custom data validation',
-      'Prototyped out full-stack app in about a month, targeting ~20 users',
-      'Increased metric visibility by adding a custom dashboard displaying key deadline-related metrics',
-      'Expanded the application by further learning and implementing d3 for custom reports',
-      "Implemented alerting and notification features, resulting in an increase in the company's collection rate",
+      'Converted an Excel-based workflow into a full-stack internal web app with better validation and day-to-day usability for office staff',
+      'Prototyped and deployed the initial React, Express, and Postgres application in about a month for roughly 20 users',
+      'Added dashboards and reporting features that improved visibility into deadline-related metrics',
+      "Built alerting and notification features that helped improve the company's collection rate",
     ],
   },
   {
@@ -112,11 +110,10 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
       'I was a driver for the movement from paper to electronic records in the office.',
     ].join(' '),
     entries: [
-      'Setup initial file system and computer security systems for the office staff and outpost employees',
-      'Performed general tasks such as maintenance, upgrades, and software installation',
-      'Served as the primary point-of-contact for vendors within the context of IT, including ISPs and software vendors',
-      'Completed security audits and implemented security measures to protect sensitive client data',
-      'Generated quarterly IT budgets, including the cost of upgrades, replacements, and new tech',
+      'Managed core office IT systems, including file access and workstation security, for staff across the main office and outpost locations',
+      'Served as the primary IT contact for vendors, including ISPs and software providers, helping keep systems and services running smoothly',
+      'Completed security audits and implemented measures to protect sensitive client data',
+      'Supported the office’s shift from paper-based processes to electronic systems, which later informed the internal tools I built as a software engineer',
     ],
   },
 ];
