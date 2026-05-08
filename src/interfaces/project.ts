@@ -5,6 +5,7 @@ export interface Project {
     long?: string;
   };
   github?: string;
+  url?: string;
   imgs?: string[];
   code?: string[];
 }

@@ -2,6 +2,24 @@ import type { Project } from '@/interfaces/project';
 
 export const PROJECTS: Project[] = [
   {
+    title: 'stardeck.space',
+    description: {
+      short: 'Star Citizen ship + CCU upgrade planner',
+      long: [
+        "Stardeck plans the cheapest chain of upgrades (CCUs) between any two Star Citizen ships, mixing warbond and standard variants to minimize total spend.",
+        "Ship metadata, 3D models, and store images are pulled from the game's own files every patch and rendered into an interactive upgrade graph.",
+        'Built as a Rust + Next.js monorepo (axum/tonic services, Postgres, S3, Supabase auth, K8s/Terraform).',
+      ].join(' '),
+    },
+    url: 'https://stardeck.space',
+    imgs: [
+      '/assets/projects/stardeck/chain-start.png',
+      '/assets/projects/stardeck/chain-graph.png',
+      '/assets/projects/stardeck/ships-catalog.png',
+      '/assets/projects/stardeck/ship-picker.png',
+    ],
+  },
+  {
     title: 'burneural-network',
     description: {
       short: 'A simple implementation of a neural network in Rust using Burn',

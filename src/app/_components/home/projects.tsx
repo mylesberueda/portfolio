@@ -3,7 +3,7 @@
 import cn from 'classnames';
 import NextLink from 'next/link';
 import React, { useCallback, useEffect, useState } from 'react';
-import { IoLogoGithub } from 'react-icons/io5';
+import { IoLogoGithub, IoOpenOutline } from 'react-icons/io5';
 import { TfiWindow } from 'react-icons/tfi';
 
 import { Modal, type ModalRef } from '@/components';
@@ -33,11 +33,11 @@ export function Projects() {
       <div className='flex max-h-[80%] flex-col gap-4'>
         <h3 className='font-medium text-xl'>{p.title}</h3>
         {p.description.long && <p>{p.description.long}</p>}
-        <div className='carousel w-full border'>
+        <div className='carousel w-full border bg-base-300' style={{ aspectRatio: '16 / 9', maxHeight: '70vh' }}>
           {images.map((img, i) => {
             return (
               <div key={`${url}-${i + 1}`} id={`${url}-slide-${i}`} className='carousel-item relative w-full'>
-                <img alt={`${url}-img-${i}`} src={img} className='w-full' />
+                <img alt={`${url}-img-${i}`} src={img} className='h-full w-full object-contain' />
                 <div className='-translate-y-1/2 absolute top-1/2 right-5 left-5 flex transform justify-between'>
                   {images.length > 1 && (
                     <>
@@ -113,6 +113,13 @@ const ProjectItem = ({ project, onWindowClick = () => null }: ProjectProps) => {
           <NextLink href={project.github} target='_blank'>
             <button type='button' className='p-1 hover:text-primary dark:hover:text-secondary'>
               <IoLogoGithub size={24} />
+            </button>
+          </NextLink>
+        )}
+        {project.url && (
+          <NextLink href={project.url} target='_blank'>
+            <button type='button' className='p-1 hover:text-primary dark:hover:text-secondary'>
+              <IoOpenOutline size={24} />
             </button>
           </NextLink>
         )}
