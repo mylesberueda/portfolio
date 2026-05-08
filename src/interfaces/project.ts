@@ -4,6 +4,7 @@ export interface Project {
     short: string;
     long?: string;
   };
+  stack?: string[];
   github?: string;
   url?: string;
   imgs?: string[];

@@ -3,70 +3,29 @@
 import cn from 'classnames';
 import NextLink from 'next/link';
 import React, { useCallback, useEffect, useState } from 'react';
-import { IoLogoGithub, IoOpenOutline } from 'react-icons/io5';
-import { TfiWindow } from 'react-icons/tfi';
+import { IoImagesOutline, IoLogoGithub, IoOpenOutline } from 'react-icons/io5';
 
-import { Modal, type ModalRef } from '@/components';
 import type { Project } from '@/interfaces/project';
 import { PROJECTS } from '@/lib/projects';
 
+import { ProjectLightbox, type ProjectLightboxRef } from './project-lightbox';
 import Section from './section';
 
 export function Projects() {
   const [project, setProject] = useState<Project | null>(null);
-  const [component, setComponent] = useState<React.ReactNode>();
-  const modalRef = React.useRef<ModalRef>(null);
+  const lightboxRef = React.useRef<ProjectLightboxRef>(null);
 
   useEffect(() => {
     if (!project) return;
-
-    modalRef.current?.openModal();
+    lightboxRef.current?.open();
   }, [project]);
 
   const handleOnWindowClick = useCallback((p: Project) => {
     if (!p.imgs) return;
-    const images = p.imgs || [];
-
-    const url = p.title.toLowerCase().replace(/\s/g, '-');
-
-    const C = () => (
-      <div className='flex max-h-[80%] flex-col gap-4'>
-        <h3 className='font-medium text-xl'>{p.title}</h3>
-        {p.description.long && <p>{p.description.long}</p>}
-        <div className='carousel w-full border bg-base-300' style={{ aspectRatio: '16 / 9', maxHeight: '70vh' }}>
-          {images.map((img, i) => {
-            return (
-              <div key={`${url}-${i + 1}`} id={`${url}-slide-${i}`} className='carousel-item relative w-full'>
-                <img alt={`${url}-img-${i}`} src={img} className='h-full w-full object-contain' />
-                <div className='-translate-y-1/2 absolute top-1/2 right-5 left-5 flex transform justify-between'>
-                  {images.length > 1 && (
-                    <>
-                      <a
-                        href={`#${url}-slide-${i === 0 ? images.length - 1 : i - 1}`}
-                        className='btn btn-circle opacity-70'>
-                        ❮
-                      </a>
-                      <a
-                        href={`#${url}-slide-${i === images.length - 1 ? 0 : i + 1}`}
-                        className='btn btn-circle opacity-70'>
-                        ❯
-                      </a>
-                    </>
-                  )}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    );
-
-    setComponent(<C />);
-    modalRef.current?.openModal();
+    setProject(p);
   }, []);
 
   const handleOnClose = useCallback(() => {
-    console.log('closed');
     setProject(null);
   }, []);
 
@@ -74,15 +33,13 @@ export function Projects() {
     <Section id='projects' title='PROJECTS.'>
       <div className='flex w-full flex-col gap-4'>
         <span className='italic'>🚀 some side projects, to satisfy my curiosity</span>
-        <div className='grid grid-cols-1 grid-rows-2 gap-4 md:grid-cols-2'>
-          {PROJECTS.map((project) => (
-            <ProjectItem key={project.title} project={project} onWindowClick={handleOnWindowClick} />
+        <div className='grid w-full grid-cols-1 gap-4'>
+          {PROJECTS.map((p) => (
+            <ProjectItem key={p.title} project={p} onWindowClick={handleOnWindowClick} />
           ))}
         </div>
       </div>
-      <Modal id='project' ref={modalRef} onClose={handleOnClose}>
-        {component}
-      </Modal>
+      <ProjectLightbox ref={lightboxRef} project={project} onClose={handleOnClose} />
     </Section>
   );
 }
@@ -96,40 +53,59 @@ interface ProjectProps {
 
 const ProjectItem = ({ project, onWindowClick = () => null }: ProjectProps) => {
   return (
-    <div
-      className={cn(
-        'group flex flex-row justify-between p-4 align-center md:odd:last:col-span-2',
-        'border bg-base-200 p-4 hover:border-primary',
-        'dark:hover:border-secondary',
-      )}>
-      <div className='select-none'>
-        <h2 className='font-medium text-xl group-hover:text-primary dark:group-hover:text-secondary'>
-          {project.title}
-        </h2>
-        <p className='line-clamp-3'>{project.description.short}</p>
+    <div className='group flex flex-col gap-2 border border-base-300 bg-base-200 p-4 hover:border-primary'>
+      <div id='project__header' className='flex w-full items-center gap-2'>
+        <div
+          className={cn(
+            'flex w-full flex-col items-start justify-between gap-2 font-bold tracking-widest',
+            'group-hover:text-primary',
+            'md:flex-row',
+          )}>
+          <span>{project.title}</span>
+          {project.stack && project.stack.length > 0 && (
+            <span className='font-mono font-normal text-sm tracking-normal'>{project.stack.join(' · ')}</span>
+          )}
+        </div>
       </div>
-      <div className='flex items-start gap-1'>
-        {project.github && (
-          <NextLink href={project.github} target='_blank'>
-            <button type='button' className='p-1 hover:text-primary dark:hover:text-secondary'>
-              <IoLogoGithub size={24} />
-            </button>
-          </NextLink>
-        )}
+      <span className='font-medium italic'>{project.description.short}</span>
+      {project.description.long && <span>{project.description.long}</span>}
+      <div id='project__links' className='flex gap-2'>
+        <span className='font-medium'>links:</span>
         {project.url && (
-          <NextLink href={project.url} target='_blank'>
-            <button type='button' className='p-1 hover:text-primary dark:hover:text-secondary'>
-              <IoOpenOutline size={24} />
-            </button>
-          </NextLink>
+          <div className='flex [&:last-child>.comma]:hidden'>
+            <NextLink
+              href={project.url}
+              target='_blank'
+              className='flex items-center justify-center hover:text-primary hover:underline'>
+              <IoOpenOutline size={16} />
+              <span className='ml-1'>website</span>
+            </NextLink>
+            <span className='comma'>,</span>
+          </div>
+        )}
+        {project.github && (
+          <div className='flex [&:last-child>.comma]:hidden'>
+            <NextLink
+              href={project.github}
+              target='_blank'
+              className='flex items-center justify-center hover:text-primary hover:underline'>
+              <IoLogoGithub size={16} />
+              <span className='ml-1'>github</span>
+            </NextLink>
+            <span className='comma'>,</span>
+          </div>
         )}
         {project.imgs && (
-          <button
-            type='button'
-            className='p-1 hover:text-primary dark:hover:text-secondary'
-            onClick={() => onWindowClick(project)}>
-            <TfiWindow size={24} />
-          </button>
+          <div className='flex [&:last-child>.comma]:hidden'>
+            <button
+              type='button'
+              onClick={() => onWindowClick(project)}
+              className='flex items-center justify-center hover:text-primary hover:underline'>
+              <IoImagesOutline size={16} />
+              <span className='ml-1'>screenshots</span>
+            </button>
+            <span className='comma'>,</span>
+          </div>
         )}
       </div>
     </div>
