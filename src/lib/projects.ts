@@ -22,6 +22,19 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
+    title: 'memoir',
+    description: {
+      short: 'Memory for AI agents',
+      long: [
+        'Memoir stores what an agent is told, runs background LLM extraction to pull durable facts out of the raw turns, and serves those facts back ranked by similarity, confidence, and recency. Every read and write is scoped per tenant.',
+        "The part I'm proudest of: you never hand-edit a derived fact. Correct the source and Memoir re-derives, so a fix cascades instead of rotting. Facts also carry an event-time separate from when they were learned, so you can ask what the agent knew as of some past point.",
+        'Runs as a Rust library you call in-process or a gRPC service behind auth. Postgres is the source of truth, Qdrant holds the vectors, and a Postgres-backed queue keeps the two in sync across crashes. Open-sourced, backed by a permissive MIT/Apache-2.0 dual-license.',
+      ].join(' '),
+    },
+    stack: ['Rust', 'Postgres', 'Qdrant', 'gRPC'],
+    github: 'https://github.com/mylesberueda/memoir',
+  },
+  {
     title: 'burneural-network',
     description: {
       short: 'A from-scratch neural network in Rust',
