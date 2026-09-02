@@ -1,4 +1,4 @@
-#import "@preview/modern-cv:0.9.0": *
+#import "@preview/modern-cv:0.10.0": *
 
 #let data = json("data.json")
 #let full-name = data.author.firstname + " " + data.author.lastname
@@ -11,17 +11,20 @@
     lastname: data.author.lastname,
     email: data.author.email,
     homepage: data.author.website,
-    phone: if "phone" in data.author { data.author.phone } else { none },
     github: data.author.github,
     linkedin: data.author.linkedin,
-    address: if "address" in data.author { data.author.address } else { none },
-    positions: data.author.position,
+    positions: (
+      "Software Engineer",
+      "Software Architect",
+      "Developer",
+    ),
   ),
   profile-picture: none,
   date: datetime.today().display(),
   language: "en",
   colored-headers: true,
   show-footer: false,
+  use-smallcaps: true,
   paper-size: "us-letter",
   font: "Source Sans 3",
 )

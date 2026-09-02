@@ -1,4 +1,4 @@
-#import "@preview/modern-cv:0.9.0": *
+#import "@preview/modern-cv:0.10.0": *
 
 #let data = json("data.json")
 #let company = json("company.json")
@@ -34,19 +34,12 @@
   ),
 )
 
-#letter-heading(job-position: if "role" in company { company.role } else { "Software Engineer" }, addressee: "Hiring Manager")
+#letter-heading(
+  job-position: if "role" in company { company.role } else { "Software Engineer" },
+  addressee: "Hiring Manager",
+)
 
-#coverletter-content[
-  #lorem(100)
-]
-
-#coverletter-content[
-  #lorem(90)
-]
-
-#coverletter-content[
-  #lorem(110)
-]
+#lorem(100)
 
 // Override document metadata (must come after coverletter.with to override package defaults)
 #set document(title: doc-title, description: doc-title, keywords: doc-keywords)
