@@ -109,9 +109,12 @@ async function main() {
 
       try {
         const rootPath = process.cwd();
-        execSync(`typst compile --pdf-standard ua-1 --root "${rootPath}" --font-path "${fontPath}" "${typOutputPath}" "${pdfPath}"`, {
-          stdio: 'inherit',
-        });
+        execSync(
+          `typst compile --pdf-standard ua-1 --root "${rootPath}" --font-path "${fontPath}" "${typOutputPath}" "${pdfPath}"`,
+          {
+            stdio: 'inherit',
+          },
+        );
 
         console.log(`  Generated: ${pdfPath}`);
         console.log(`       typ: ${typOutputPath}`);

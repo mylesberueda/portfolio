@@ -2,26 +2,6 @@ import type { Project } from '@/interfaces/project';
 
 export const PROJECTS: Project[] = [
   {
-    title: 'stardeck.space',
-    description: {
-      short: 'Star Citizen ship + CCU upgrade planner',
-      long: [
-        "Stardeck plans the cheapest chain of upgrades (CCUs) between any two Star Citizen ships, mixing warbond and standard variants to minimize total spend.",
-        "The core is a multi-source Dijkstra over a weighted graph of ships, where each edge's cost is the cheapest applicable upgrade option — already-owned (free), currently-offered store CCU, or MSRP-delta as a fallback.",
-        "Ship metadata, 3D models, and store images are pulled from the game's own files every patch and rendered into the interactive upgrade graph.",
-        'Built as a Rust + Next.js monorepo (axum/tonic services, Postgres, S3, Supabase auth, K8s/Terraform).',
-      ].join(' '),
-    },
-    stack: ['Rust', 'Next.js', 'Postgres', 'K8s'],
-    url: 'https://stardeck.space',
-    imgs: [
-      '/assets/projects/stardeck/chain-start.png',
-      '/assets/projects/stardeck/chain-graph.png',
-      '/assets/projects/stardeck/ships-catalog.png',
-      '/assets/projects/stardeck/ship-picker.png',
-    ],
-  },
-  {
     title: 'memoir',
     description: {
       short: 'Memory for AI agents',
@@ -35,18 +15,6 @@ export const PROJECTS: Project[] = [
     github: 'https://github.com/mylesberueda/memoir',
   },
   {
-    title: 'burneural-network',
-    description: {
-      short: 'A from-scratch neural network in Rust',
-      long: [
-        'Built to learn the Burn deep-learning framework end-to-end — model definition, training loop, and inference, without leaning on a high-level wrapper.',
-        'Small enough to read in a sitting, but covers enough of the framework to be a useful reference next time I reach for it.',
-      ].join(' '),
-    },
-    stack: ['Rust', 'Burn'],
-    github: 'https://github.com/mylesberueda/burneural-network',
-  },
-  {
     title: 'rust-cli-starter',
     description: {
       short: 'My go-to template for CLI tools and small services in Rust',
@@ -58,6 +26,37 @@ export const PROJECTS: Project[] = [
     stack: ['Rust', 'clap'],
     github: 'https://github.com/MylesWritesCode/rust-cli-starter',
     imgs: ['/assets/projects/rust-cli-starter/main.png'],
+  },
+  {
+    title: 'stardeck.space',
+    description: {
+      short: 'Star Citizen ship + CCU upgrade planner',
+      long: [
+        'Stardeck plans the cheapest chain of upgrades (CCUs) between any two Star Citizen ships, mixing warbond and standard variants to minimize total spend.',
+        "The core is a multi-source Dijkstra over a weighted graph of ships, where each edge's cost is the cheapest applicable upgrade option — already-owned (free), currently-offered store CCU, or MSRP-delta as a fallback.",
+        "Ship metadata, 3D models, and store images are pulled from the game's own files every patch and rendered into the interactive upgrade graph.",
+        'Built as a Rust + Next.js monorepo (axum/tonic services, Postgres, S3, Supabase auth, K8s/Terraform).',
+      ].join(' '),
+    },
+    stack: ['Rust', 'Next.js', 'Postgres', 'K8s'],
+    imgs: [
+      '/assets/projects/stardeck/chain-start.png',
+      '/assets/projects/stardeck/chain-graph.png',
+      '/assets/projects/stardeck/ships-catalog.png',
+      '/assets/projects/stardeck/ship-picker.png',
+    ],
+  },
+  {
+    title: 'burneural-network',
+    description: {
+      short: 'A from-scratch neural network in Rust',
+      long: [
+        'Built to learn the Burn deep-learning framework end-to-end — model definition, training loop, and inference, without leaning on a high-level wrapper.',
+        'Small enough to read in a sitting, but covers enough of the framework to be a useful reference next time I reach for it.',
+      ].join(' '),
+    },
+    stack: ['Rust', 'Burn'],
+    github: 'https://github.com/mylesberueda/burneural-network',
   },
   {
     title: 'rust-wasm',

@@ -19,22 +19,4 @@ export const EDUCATION: Education[] = [
       end: new Date(2019, 7),
     },
   },
-  {
-    school: 'Honolulu Community College',
-    degree: 'AWS Cloud Foundations',
-    description: [
-      'By the time I took this class, I had been working on Aolytix, an app that focuses on visualizing an AWS infrastructure, for 2 years.',
-      'This class provided a structured, fundamental education on the basics of AWS, including how to manage your account and navigate the various services offered.',
-      'The outcome of the class is a certification in AWS Cloud Foundations.',
-    ].join(' '),
-    entries: [
-      'Worked through labs on EC2, S3, RDS, and more',
-      'Deployed a simple web app on an EC2 instance, routed through Route 53',
-      'Completed several knowledge checks on various AWS services',
-    ],
-    dates: {
-      start: new Date(2024, 8),
-      end: new Date(2024, 9),
-    },
-  },
 ];

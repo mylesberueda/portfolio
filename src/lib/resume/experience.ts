@@ -70,7 +70,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
       'I joined as a junior software engineer, responsible for interfacing with clients and developing new features.',
     ].join(' '),
     entries: [
-      'Reworked a fragile 5k-line JavaScript Shopify storefront plugin into a modular Svelte-based implementation with better Shopify integration, faster load behavior, and less breakage on theme updates',
+      'Reworked a 5k-line JavaScript Shopify storefront plugin into a modular Svelte-based implementation with better Shopify integration, faster load behavior, and less breakage on theme updates',
       'Worked directly with Shopify store owners to deliver custom implementations tailored to their storefronts',
       'Debugged and fixed production issues in merchant storefronts, often under quick turnaround expectations when plugin behavior broke during Shopify or theme updates',
       'Helped other developers navigate Shopify API and plugin implementation details as the team expanded feature work',
