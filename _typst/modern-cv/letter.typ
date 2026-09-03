@@ -12,7 +12,7 @@
     lastname: data.author.lastname,
     email: data.author.email,
     homepage: data.author.website,
-    phone: if "phone" in data.author { data.author.phone } else { none },
+    // phone: if "phone" in data.author { data.author.phone } else { none },
     github: data.author.github,
     linkedin: data.author.linkedin,
     address: if "address" in data.author { data.author.address } else { none },
